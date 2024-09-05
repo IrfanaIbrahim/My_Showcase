@@ -1,0 +1,271 @@
+/* src/Components/FavoritesPage.module.css */
+.favoritesSection {
+  background-color: #e8f5e9; /* Light green background */
+  padding: 20px;
+  text-align: center;
+  position: relative; /* For positioning background shapes */
+  overflow: hidden; /* Ensure background shapes don't overflow */
+}
+
+.favoritesHeading {
+  color: #2e7d32; /* Dark green */
+  font-size: 2.5em; /* Larger heading size */
+  margin-bottom: 20px;
+  font-family: 'Acme', sans-serif; /* Clean font */
+}
+
+.caption {
+  font-family: "Josefin Sans", sans-serif; 
+  font-size: 1.5em; /* Adjusted font size for better readability */
+}
+
+.favoriteCategory {
+  margin-bottom: 40px; /* Spacing between categories */
+}
+
+.categoryTitle {
+  font-size: 1.8em;
+  color: #388e3c; /* Slightly different green for contrast */
+  margin-bottom: 15px;
+  font-family: 'Acme', sans-serif; /* Consistent font */
+}
+
+.photoContainer {
+  position: relative;
+  width: 100%;
+  height: auto; /* Adjusted height for responsiveness */
+  overflow: hidden; /* Hide any overflowing content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.photoWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the images horizontally */
+  position: relative;
+}
+
+.overlayText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: #1f1e1e;
+  background-color: rgba(107, 148, 223, 0.6);
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 1; /* Ensure text is on top of images */
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.penContainer, .perfumeContainer, .geometryContainer {
+  position: relative;
+  margin-top: 50px;
+}
+
+.penPhoto, .perfumePhoto, .geometryPhoto {
+  width: 100%; /* Full width for responsiveness */
+  max-width: 700px; /* Max width for larger screens */
+  height: auto; /* Adjust height for aspect ratio */
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+  margin-top: 30px; /* Adjusted margin */
+}
+.penPhoto:hover, .perfumePhoto:hover, .geometryPhoto:hover {
+  transform: scale(1.1); /* Zoom in by 10% */
+}
+
+.overlaypenText,  .overlaygeometryText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em; /* Adjusted font size */
+  color: #ffffff;
+  background-color: rgba(20, 18, 18, 0.7);
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 1; /* Ensure text is on top of images */
+  font-family: "Josefin Sans", sans-serif;
+}
+.overlayperfumeText{
+  background-color: rgba(155, 19, 9, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em; /* Adjusted font size */
+  color: #181717;
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 1; /* Ensure text is on top of images */
+  font-family: "Josefin Sans", sans-serif;
+
+}
+
+.photo {
+  width: 150px; /* Fixed width for all images */
+  height: 280px; /* Fixed height for all images */
+  object-fit: cover; /* Ensure images cover the container */
+  opacity: 0;
+  transform: translateY(50px) scale(0.8); /* Initial position and scale */
+  animation: slideIn 3s forwards; /* Animation for sliding in */
+  margin: 10px;
+  border-radius: 10px; /* Rounded corners for images */
+}
+
+
+/* Add specific animations with different delays for each image */
+.photo:nth-child(1) { animation-delay: 0s; }
+.photo:nth-child(2) { animation-delay: 0.3s; }
+.photo:nth-child(3) { animation-delay: 0.6s; }
+.photo:nth-child(4) { animation-delay: 0.9s; }
+.photo:nth-child(5) { animation-delay: 1.2s; }
+.photo:nth-child(6) { animation-delay: 1.5s; }
+.photo:nth-child(7) { animation-delay: 1.8s; }
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Background shapes */
+.favoritesSection::before,
+.favoritesSection::after {
+  content: '';
+  position: absolute;
+  border-radius: 70%;
+  background: rgba(107, 223, 145, 0.6); /* Light greenish background */
+  z-index: 0;
+}
+
+.favoritesSection::before {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 5%;
+  background: rgba(107, 148, 223, 0.6); /* Adjusted color for contrast */
+}
+
+.favoritesSection::after {
+  width: 200px;
+  height: 200px;
+  bottom: 10%;
+  right: 10%;
+  background:  rgba(155, 19, 9, 0.2); /* Adjusted color for contrast */
+}
+
+/* Geometric shape near the geometry section */
+.geometryContainer::before {
+  content: '';
+  position: absolute;
+  background: rgba(20, 18, 18, 0.2); /* Darker shade for contrast */
+  width: 200px;
+  height: 200px;
+  top: -15%;
+  left: 5%;
+  transform: rotate(45deg); /* Rotate to create a diamond effect */
+  /* Place behind content */
+}
+
+/* Geometric shape near the pen section */
+.penContainer::after {
+  content: '';
+  position: absolute;
+  background: rgba(65, 33, 30, 0.5); /* Darker shade for contrast */
+  width: 200px;
+  height: 100px;
+  bottom: -10%;
+  right: 15%;
+  transform: rotate(20deg); /* Rotate to create a parallelogram effect */
+  /* Place behind content */
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+  .favoritesHeading {
+    font-size: 1.8em; /* Smaller heading size for mobile */
+  }
+
+  .caption {
+    font-size: 1.2em; /* Smaller font size for mobile */
+  }
+
+  .categoryTitle {
+    font-size: 1.4em; /* Smaller font size for category titles */
+  }
+
+  .penPhoto, .perfumePhoto, .geometryPhoto {
+    width: 100%; /* Full width for images on mobile */
+    max-width: 100%; /* Adjust max-width for mobile */
+    margin-top: 20px; /* Adjusted margin */
+  }
+
+  .overlaypenText, .overlayperfumeText, .overlaygeometryText {
+    font-size: 1.2em; /* Smaller font size for overlay text */
+    padding: 5px; /* Reduced padding */
+  }
+
+
+  .favoritesSection::before {
+    width: 50px;
+    height: 50px;
+    top: 13%;
+    left: 5%;
+    background: rgba(107, 148, 223, 0.6); /* Adjusted color for contrast */
+  }
+  
+  .favoritesSection::after {
+    width: 100px;
+    height: 100px;
+    bottom: 15%;
+    right: 5%;
+    background:  rgba(155, 19, 9, 0.2); /* Adjusted color for contrast */
+  }
+  .photoContainer {
+   
+    width: 100%;
+    height: auto; /* Adjusted height for responsiveness */
+    overflow: hidden; /* Hide any overflowing content */
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .photo {
+    width: 50px; /* Fixed width for all images */
+    height: 70px; /* Fixed height for all images */
+    object-fit: cover; /* Ensure images cover the container */
+    opacity: 0;
+    transform: translateY(50px) scale(0.8); /* Initial position and scale */
+    animation: slideIn 3s forwards; /* Animation for sliding in */
+    margin: 3px;
+    border-radius: 5px;
+     /* Rounded corners for images */
+  }
+  .overlayText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    color: #1f1e1e;
+    background-color: rgba(107, 148, 223, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1; /* Ensure text is on top of images */
+    font-family: "Josefin Sans", sans-serif;
+    width: 70%;
+    max-width: 650px;
+  }
+}
+

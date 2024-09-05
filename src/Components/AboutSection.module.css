@@ -1,0 +1,65 @@
+/* src/Components/AboutSection.module.css */
+.aboutSection {
+    background-color: #e8f5e9; /* Light green background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: 'Acme', sans-serif;
+    text-align: center;
+    position: relative; /* For positioning geometric shapes */
+    overflow: hidden; /* Ensure shapes don't overflow */
+  }
+  
+  .photoContainer {
+    margin-bottom: 20px;
+  }
+  
+  .photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #a5d6a7; /* Lighter green border */
+  }
+  
+  .title {
+    color: #2e7d32; /* Dark green */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .description {
+    color: #388e3c; /* Slightly different green for contrast */
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* Geometric shapes */
+  .aboutSection::before,
+  .aboutSection::after {
+    content: '';
+    position: absolute;
+    border-radius: 10px;
+    background: rgba(76, 175, 80, 0.3); /* Light green with some transparency */
+    z-index: 0;
+  }
+  
+  .aboutSection::before {
+    width: 120px;
+    height: 120px;
+    top: 20%;
+    left: 10%;
+    background: rgba(76, 175, 80, 0.2); /* Adjusted color for contrast */
+  }
+  
+  .aboutSection::after {
+    width: 150px;
+    height: 150px;
+    bottom: 10%;
+    right: 10%;
+    background: rgba(76, 175, 80, 0.2); /* Adjusted color for contrast */
+  }
+  

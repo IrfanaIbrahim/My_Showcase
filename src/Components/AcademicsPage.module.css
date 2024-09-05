@@ -1,0 +1,148 @@
+.academicsSection {
+  background-color: #e8f5e9; /* Light green background */
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Arrange children vertically */
+  align-items: center; /* Center items horizontally */
+  position: relative; /* Position relative for pseudo-elements */
+  overflow: hidden; /* Hide overflow to avoid shapes extending beyond the section */
+}
+
+.academicsSection::before, .academicsSection::after {
+  content: '';
+  position: absolute;
+  background: rgba(38, 166, 91, 0.3); /* Semi-transparent green */
+  z-index: 0; /* Ensure shapes are behind the content */
+  border-radius: 50%; /* Start with circular shapes */
+}
+
+.academicsSection::before {
+  width: 150px;
+  height: 150px;
+  top: -50px;
+  left: -50px;
+}
+
+.academicsSection::after {
+  width: 200px;
+  height: 200px;
+  bottom: -80px;
+  right: -80px;
+  border-radius: 0%; /* Create a square shape */
+  transform: rotate(45deg); /* Rotate the square */
+}
+
+/* Additional random shapes */
+.academicsSection .shape1 {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(56, 142, 60, 0.3); /* Another shade of green */
+  top: 30px;
+  right: 50px;
+  border-radius: 0 50% 50% 0; /* Half-circle shape */
+  z-index: 0;
+}
+
+.academicsSection .shape2 {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(38, 166, 91, 0.4);
+  bottom: 50px;
+  left: 40px;
+  transform: rotate(-30deg); /* Triangle shape */
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  z-index: 0;
+}
+
+.academicsHeading {
+  color: #2e7d32; /* Dark green */
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-family: 'Acme', sans-serif;
+  position: relative;
+  z-index: 1; /* Ensure heading is above the shapes */
+}
+
+.academicCategory {
+  display: flex;
+  flex-direction: column; /* Arrange sections vertically */
+  gap: 20px;
+  width: 100%; /* Ensure the container takes full width */
+  align-items: center; /* Center items horizontally */
+  position: relative;
+  z-index: 1; /* Ensure content is above the shapes */
+}
+
+.categoryTitle {
+  font-size: 1.8em;
+  color: #388e3c; /* Slightly different green for contrast */
+  margin-bottom: 10px;
+  font-family: 'Acme', sans-serif; /* Consistent font */
+  position: relative;
+  z-index: 1;
+}
+
+.academicCard {
+  background: linear-gradient(135deg, #a5d6a7, #66bb6a); /* Gradient for a green card */
+  padding: 20px;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px; /* Adjust width as needed */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  z-index: 1;
+}
+
+.academicCard:hover {
+  transform: translateY(-10px); /* Lift the card slightly on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add a stronger shadow on hover */
+}
+
+.academicCard:before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 200%;
+  height: 200%;
+  background: rgba(0, 150, 136, 0.2); /* Light greenish background */
+  border-radius: 50%;
+  z-index: 0;
+  transform: rotate(-30deg); /* Rotate to create irregular effect */
+}
+
+.academicContent {
+  position: relative;
+  z-index: 1;
+  color: #ffffff; /* White text color for contrast */
+}
+
+.academicCard h3 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-family: 'Acme', sans-serif;
+}
+
+.academicDetails {
+  font-size: 1.2em;
+  line-height: 1.6;
+  font-family: 'Josefin Sans', sans-serif; /* Stylish font */
+}
+
+.button:hover {
+  background-color: #00b318; /* Darker green background on hover */
+}
+
+.button:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5); /* Custom focus ring */
+}

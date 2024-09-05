@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+.backgroundContainer {
+  background-image: url('../Images/Irfuintropng.png');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  max-width: 1330px;
+  height: 450px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add shadow around the container */
+  border-radius: 2px; /* Optional: Add rounded corners */
+  overflow: hidden;
+  /*display: flex;*/
+  /*justify-content: flex-start;*/
+  /*align-items: center;*/
+  /*padding-left: 100px;*/
+  /*position: relative;*/
+}
+
+.textContent {
+  color: rgb(255, 255, 255);
+  font-family: "Acme", sans-serif;
+}
+
+.backgroundContainer h1 {
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-size: 4em; /* Makes the text larger */
+  font-weight: 500; /* Use a more beautiful font */
+  animation: fadeInScale 2s ease-in-out; /* Apply the fade-in and scale effect */
+  margin: 0; /* Remove default margin */
+  margin-top: 80px;
+  margin-left: 70px;
+}
+
+.backgroundContainer .nameText {
+  margin-top: -10px; /* Reduce space between "Hello" and name */
+}
+
+.backgroundContainer p {
+  font-family: "Acme", sans-serif;
+  color: rgb(0, 0, 0);
+  font-size: 2em;
+  margin-top: 55px;
+  margin-left: 70px;
+}
+
+.navbar {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.navbar ul {
+  list-style: none; /* Remove default list styles */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Align list items horizontally */
+  flex-wrap: wrap; /* Allow wrapping for small screens */
+  justify-content: center; /* Center items horizontally */
+}
+
+.navbar li {
+  margin: 20px; /* Adjust space between menu items for mobile */
+}
+
+.navButton {
+  color: rgb(255, 255, 255); /* Button text color */
+  background: none; /* Remove default button background */
+  border: none; /* Remove button border */
+  cursor: pointer; /* Add pointer cursor on hover */
+  font-family: "Acme", sans-serif; /* Font family */
+  font-size: 1.2em; /* Font size */
+  position: relative; /* Position relative for ::after pseudo-element */
+  transition: color 0.3s ease-in-out; /* Smooth color change on hover */
+  outline: none; /* Remove focus outline */
+
+}
+
+.navButton::after {
+  content: ''; /* No text, just a line */
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Position the underline slightly below the text */
+  width: 0; /* Initially, the underline is not visible */
+  height: 2px; /* Thickness of the underline */
+  background-color: rgba(255, 255, 255, 0.8); /* Underline color */
+  transition: width 0.3s ease-in-out; /* Smooth underline animation */
+}
+
+.navButton:hover {
+  color: rgba(255, 255, 255, 0.9); /* Subtle color change on hover */
+}
+
+.navButton:hover::after {
+  width: 100%; /* Expand underline width on hover */
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+  .backgroundContainer {
+    height: auto; /* Allow height to adjust based on content */
+    text-align: center; /* Center text for smaller screens */
+    padding: 20px; /* Add padding for smaller screens */
+  }
+
+  .backgroundContainer h1 {
+    font-size: 2.5em; /* Smaller font size for smaller screens */
+    margin-top: 20px;
+    margin-left: 0; /* Remove left margin for smaller screens */
+  }
+
+  .backgroundContainer p {
+    font-size: 1.5em; /* Smaller font size for smaller screens */
+    margin-top: 20px;
+    margin-left: 0; /* Remove left margin for smaller screens */
+  }
+
+  .navbar ul {
+    flex-direction: column; /* Stack menu items vertically */
+    align-items: center; /* Center items */
+    
+  }
+
+  .navbar li {
+    margin: 10px; /* Adjust space between menu items for smaller screens */
+  }
+
+  .navButton {
+    font-size: 1em; /* Smaller font size for smaller screens */
+  }
+}
+
+
+.date {
+  color: #000000;
+}
+
+.aboutMeSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures proper spacing between photo and content */
+  background-color: #e0f7df; /* Light green background */
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  position: relative;
+  
+}
+
+.photoContainer {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.profilePhoto {
+  width: 180px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow around the photo */
+}
+
+.aboutMeContent {
+  flex: 5;
+  text-align: center; /* Center-aligns the content */
+}
+
+.aboutMeContent h2 {
+  font-size: 2.5em;
+  color: #2e7d32; /* Darker green for the title */
+  margin-bottom: 20px;
+  font-family: 'Acme', sans-serif; /* Ensures the title uses a stylish font */
+}
+
+.aboutMeContent p {
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.6; /* Improves readability of the text */
+  font-family: 'Josefin Sans', sans-serif; /* A stylish font for the paragraph */
+  margin-top: 0;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .aboutMeSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Centers the text and title */
+    padding: 20px;
+  }
+
+  .photoContainer {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .profilePhoto {
+    width: 120px;
+  }
+
+  .aboutMeContent h2 {
+    font-size: 2em;
+  }
+
+  .aboutMeContent p {
+    font-size: 1em;
+  }
+}
+
+.aboutSiteSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Keeps space between the content and the photo */
+  background-color: #d0f0c0; /* Light warm beige background */
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  position: relative;
+}
+
+.aboutSiteContent {
+  flex: 4.5;
+  text-align: center; /* Center-aligns the content */
+}
+
+.aboutSiteContent h2 {
+  font-size: 2.5em;
+  color: #2e7d32; /* Soft dark green for the title */
+  margin-bottom: 15px;
+  font-family: 'Acme', sans-serif; /* Handwritten style font for a personal touch */
+}
+
+.aboutSiteContent p {
+  font-size: 1.2em;
+  color: #4b4a4a;
+  line-height: 1.6; /* Improves readability of the text */
+  font-family: 'Josefin Sans', sans-serif; /* Stylish, readable font for the paragraph */
+  margin-top: 0;
+}
+
+.photoContainer1 {
+  flex: 0.5;
+  padding-left: 20px;
+}
+
+.profilePhotoRight {
+  width: 160px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow around the photo */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .aboutSiteSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Centers the text and title */
+    padding: 20px;
+  }
+
+  .photoContainer1 {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  .profilePhotoRight {
+    width: 120px;
+  }
+
+  .aboutSiteContent h2 {
+    font-size: 2em;
+  }
+
+  .aboutSiteContent p {
+    font-size: 1em;
+  }
+}
+
+@keyframes underline-slide-in {
+  from {
+    width: 0;
+    opacity: 0.5;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.quoteSection {
+  display: flex;
+  align-items: center;
+  background-color: #d3fcd8; /* Light greenish color to match the theme */
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  margin: 20px 0;
+  flex-direction: column; /* Stack items vertically on smaller screens */
+}
+
+.quoteContent {
+  max-width: 100%; /* Ensure content doesn't exceed container width */
+  text-align: justify; /* Justify the text for readability */
+}
+
+.quoteContent h2 {
+  font-size: 2.5em;
+  color: #2e7d32; /* Darker green for the title */
+  margin-bottom: 20px;
+  font-family: 'Acme', sans-serif;
+  margin: 0; /* Remove left margin for smaller screens */
+  text-align: center; /* Center-align the title */
+}
+
+.quoteContent p {
+  font-size: 2.2em;
+  color: #333;
+  font-family: 'Josefin Sans', sans-serif; /* A stylish font for the paragraph */
+  margin: 0;
+  line-height: 1.5; /* Improves readability of the text */
+  font-style: italic;
+  text-align: center; /* Center-align the paragraph for consistency */
+  margin-top: 10px; /* Adjust top margin */
+  margin-bottom: 10px; /* Adjust bottom margin */
+}
+
+.quoteContent p br {
+  margin: 10px 0; 
+  /* Adds spacing between lines in the quote */
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+  .quoteSection {
+    padding: 20px 10px; /* Adjust padding for smaller screens */
+  }
+
+  .quoteContent h2 {
+    font-size: 1.8em; /* Smaller font size for the title */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  .quoteContent p {
+    font-size: 1.2em; /* Smaller font size for the paragraph */
+    margin-left: 0; /* Remove left margin */
+  }
+}
+
+.nameSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures proper spacing between photo and content */
+  background-color: #b6e6ca; /* Light green background */
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  position: relative;
+}
+
+.photoContainer2 {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.profilePhoto {
+  width: 160px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow around the photo */
+}
+
+.nameSectionContent {
+  flex: 5;
+  text-align: center; /* Center-aligns the content */
+}
+
+.nameSectionContent h2 {
+  font-size: 2.5em;
+  color: #266829; /* Darker green for the title */
+  margin-bottom: 20px;
+  font-family: 'Acme', sans-serif; /* Ensures the title uses a stylish font */
+}
+
+.nameSectionContent p {
+  font-size: 1.2em;
+  color: #3f3e3e;
+  line-height: 1.6; /* Improves readability of the text */
+  font-family: 'Josefin Sans', sans-serif; /* A stylish font for the paragraph */
+  margin-top: 0;
+}
+
+.nameSectionContent strong {
+  color: #266829;
+}
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .nameSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Centers the text and title */
+    padding: 20px;
+  }
+
+  .photoContainer2 {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .profilePhoto {
+    width: 120px;
+  }
+
+  .nameSectionContent h2 {
+    font-size: 2em;
+  }
+
+  .nameSectionContent p {
+    font-size: 1em;
+  }
+}
+.contactSection {
+  position: relative;
+  background: linear-gradient(135deg, #e0f7df 50%, #e3f2e3 50%), 
+              radial-gradient(circle at 10% 20%, #a7faa9, transparent 50%),
+              radial-gradient(circle at 90% 80%, #70e674, transparent 50%);
+  background-size: cover, 150px 150px, 150px 150px;
+  background-position: left top, left top, right bottom;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure shapes don't overflow the section */
+}
+
+.contactSection h2 {
+  text-align: center;
+  color: #2e7d32; /* Dark green */
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contactForm label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.contactForm input, 
+.contactForm textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.contactForm button {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2e7d32; /* Dark green */
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.contactForm button:hover {
+  background-color: #1b5e20; /* Even darker green on hover */
+}
+
+.socialMediaLinks {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.socialMediaLinks a {
+  margin: 0 15px;
+  color: #2e7d32; /* Dark green */
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.socialMediaLinks a:hover {
+  color: #1b5e20; /* Darker green on hover */
+}
+
+  
+  
+  @media (max-width: 768px) {
+    .navbar ul {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      align-items: center; /* Center items horizontally */
+      
+    }
+  
+    .navbar li {
+      margin: 10px 0; /* Vertical space between items */
+    }
+  
+    .navbar {
+      height: auto; /* Allow height to adjust for stacked items */
+      padding: 10px 0; /* Add padding for better spacing */
+    }
+  }
+  
+/* Fade-in and scale-up effect */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
