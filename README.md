@@ -7,4 +7,4 @@ Just go through my area and have fun.
 You can access my Website by clicking below link.
 
 
-[Irfana_Ibrahim_In_Active](https://66d94b90a7edd4b90370d793--irfanaibrahimshowcase.netlify.app/)
+[Irfana_Ibrahim_In_Active](https://irfanaibrahimshowcase.netlify.app/)
