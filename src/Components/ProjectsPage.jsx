@@ -2,11 +2,12 @@ import React from 'react';
 import styles from './ProjectsPage.module.css'; // Import the CSS for styling
 
 const ProjectsPage = () => {
- 
   return (
     <div id="projects" className={styles.projectsSection}>
       <h2 className={styles.projectsHeading}>My Featured Projects</h2>
       <div className={styles.projectsContainer}>
+        
+        {/* Project 1 */}
         <div className={styles.projectCard}>
           <div className={styles.projectContent}>
             <h3>1. Enhancing Object Tracking Performance through Fusion of Lidar and Radar Data</h3>
@@ -19,6 +20,8 @@ const ProjectsPage = () => {
             </p>
           </div>
         </div>
+
+        {/* Project 2 */}
         <div className={styles.projectCard}>
           <div className={styles.projectContent}>
             <h3>2. ToDo-Manager</h3>
@@ -31,9 +34,11 @@ const ProjectsPage = () => {
             </p>
           </div>
         </div>
+
+        {/* Project 3 */}
         <div className={styles.projectCard}>
           <div className={styles.projectContent}>
-            <h3>3. Heart Disease Prediction using Machine Learning </h3>
+            <h3>3. Heart Disease Prediction using Machine Learning</h3>
             <p className={styles.projectDescription}>
               Developed a Heart Disease Predictor utilizing Machine Learning to assess whether an individual may be suffering from cardiovascular disease based on specific symptoms. The system analyzes various input parameters related to heart health and uses trained algorithms to provide a prediction, aiding in early detection and intervention.
               <br />
@@ -43,6 +48,21 @@ const ProjectsPage = () => {
             </p>
           </div>
         </div>
+
+        {/* Project 4 (New One) */}
+        <div className={styles.projectCard}>
+          <div className={styles.projectContent}>
+            <h3>4. WhatsApp Expense & Budget Tracker</h3>
+            <p className={styles.projectDescription}>
+              Developed a WhatsApp bot to streamline expense tracking by integrating Google Sheets and Twilio API. Implemented features for adding, modifying, and deleting expenses, along with budget tracking. Enabled users to retrieve spending summaries for specific dates and ranges, making financial tracking more accessible through WhatsApp.
+              <br />
+              <strong>Duration:</strong> 5 Days
+              <br />
+              <strong>Technologies:</strong> Python, Flask, Google Sheets, Twilio API
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   );
